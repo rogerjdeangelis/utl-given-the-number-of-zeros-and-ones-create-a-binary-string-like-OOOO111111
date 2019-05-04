@@ -25,7 +25,7 @@ Given the number of zeros and ones create a binary string like OOOO111111
     |_| |_|\___| \_/\_/                                                          
                                                                                  
                                                                                  
-    Clever additions by Max and Paul                                              
+    Clever additions by Bart, Max, and Paul                                              
                                                                                  
     Paul Dorfman <sashole@bellsouth.net>                                         
     May 3, 2019, 8:53 PM (8 hours ago)                                           
@@ -63,7 +63,29 @@ Given the number of zeros and ones create a binary string like OOOO111111
                                                                                  
     Max                                                                          
                                                                                  
-                                                                                 
+    Bartosz Jablonski                                      
+    yabwon@gmail.com                                       
+                                                           
+    Hi Roger,                                              
+                                                           
+    I think we can also use (in)famous cats() function     
+    and a temporary array - in case strings get bigger;    
+                                                           
+    all the best                                           
+    Bart                                                   
+                                                           
+                                                           
+    %let n0=128;                                           
+                                                           
+    %let n1=128;                                           
+                                                           
+    data _null_;                                           
+      array t[%eval(&n0+&n1)] (&n0*0 &n1*1);               
+      length res $ %eval(&n0+&n1);                         
+      res = cats(of t[*]);                                 
+      put res=;                                            
+    run;                                                   
+                                                                             
                                                                                                                              
         *_                   _                                                                                                          
         (_)_ __  _ __  _   _| |_                                                                                                        
